@@ -8,7 +8,7 @@
 Prosta aplikacja webowa typu "sklep internetowy" stworzona w celu demonstracji nowoczesnych procesów wytwarzania oprogramowania (CI/CD) oraz konteneryzacji. Projekt obejmuje widok klienta, panel administratora oraz REST API.
 
 ## Stos technologiczny
-*   **Backend:** Python 3.9 + Flask
+*   **Backend:** Python 3.12.1 + Flask 3.1.2
 *   **Baza danych:** SQLite
 *   **Frontend:** HTML, CSS, JavaScript
 *   **Konteneryzacja:** Docker

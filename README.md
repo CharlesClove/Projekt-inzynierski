@@ -38,6 +38,15 @@ Zbuduj obraz i uruchom kontener:
 docker build -t simple-shop .
 docker run -p 5000:5000 simple-shop
 ```
+
+Sciągnij obraz z dockerhub i uruchom kontener:
+```Bash
+docker pull clovedockerhub/projekt-inzynierski:latest
+    #opcjonalne otagowanie kontenera
+    docker tag clovedockerhub/projekt-inzynierski:latest simple-shop-ver#
+docker run -d -p 5000:5000 clovedockerhub/projekt-inzynierski:latest {simple-shop-ver#}
+```
+
 ## Endpointy
 
     / - Strona główna sklepu (widok klienta)

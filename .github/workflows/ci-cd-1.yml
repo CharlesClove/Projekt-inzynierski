@@ -19,7 +19,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/projekt-inzynierski
+          images: ${{ secrets.DOCKER_USERNAME }}/projekt-inzynierski
           tags: |
             type=sha
             type=raw,value=latest
@@ -36,4 +36,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          

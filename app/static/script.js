@@ -74,7 +74,7 @@ async function loadProducts() {
     }
 }
 
-// Add new product
+// Add new product //
 async function addProduct(event) {
     event.preventDefault();
 

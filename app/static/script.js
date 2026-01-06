@@ -158,7 +158,7 @@ function cancelEdit(productId) {
     editingProductId = null;
 }
 
-// Save edited product
+// Save edited product /
 async function saveProduct(productId) {
     const row = document.querySelector(`tr[data-id="${productId}"]`);
 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administratora - Zarządzanie Produktami</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="title-icon">⚙️</span>
+                    Panel Administratora
+                </h1>
+                <p class="subtitle">Zarządzaj produktami w sklepie</p>
+                <a href="/client" class="admin-link">Powrót do strony klienta →</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Add Product Form -->
+            <section class="admin-section">
+                <h2 class="section-title">
+                    <span class="section-icon">➕</span>
+                    Dodaj Nowy Produkt
+                </h2>
+                <form id="add-product-form" class="product-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-name">Nazwa produktu</label>
+                            <input type="text" id="product-name" name="name" placeholder="np. Laptop Dell XPS" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-price">Cena (PLN)</label>
+                            <input type="number" id="product-price" name="price" placeholder="0.00" step="0.01" min="0"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-description">Opis</label>
+                        <textarea id="product-description" name="description" placeholder="Opcjonalny opis produktu..."
+                            rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>✓</span> Dodaj Produkt
+                    </button>
+                </form>
+            </section>
+
+            <!-- Products List -->
+            <section class="admin-section">
+                <h2 class="section-title">
+                    <span class="section-icon">📋</span>
+                    Lista Produktów
+                </h2>
+
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Ładowanie produktów...</p>
+                </div>
+
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    <div class="empty-icon">📦</div>
+                    <h3>Brak produktów</h3>
+                    <p>Dodaj pierwszy produkt używając formularza powyżej.</p>
+                </div>
+
+                <div id="products-table-container" style="display: none;">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nazwa</th>
+                                <th>Cena</th>
+                                <th>Opis</th>
+                                <th>Akcje</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-tbody">
+                            <!-- Products will be loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

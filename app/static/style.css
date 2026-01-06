@@ -128,7 +128,7 @@ body {
 .empty-state {
     text-align: center;
     padding: 4rem 0;
-    margin: 4rem 0;
+    margin: 5rem 0;
     color: var(--text-secondary);
 }
 

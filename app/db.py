@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-DB_PATH = os.path.join(os.path.dirname(__file__), 'products.db')
+DB_PATH = os.path.join(os.path.dirname(__file__), 'database.db')
 
 def get_connection():
     """Create a database connection."""
